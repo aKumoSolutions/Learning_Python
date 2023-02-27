@@ -16,7 +16,8 @@ print(0x123)
 
     # Can't divide by 0 #
 
-```division = 5 / 7
+``` python
+division = 5 / 7
 plus = 4 + 4
 subtraction = 5 - 2
 multiplication = 5 \* 5
@@ -24,26 +25,28 @@ multiplication = 5 \* 5
 
 ## integer division
 
-```int_num = 7 // 2
+``` python
+int_num = 7 // 2
 print(int_num)
 ```
 
 ## modulus division
 
-```left_over_num = 7 % 4
+``` python
+left_over_num = 7 % 4
 print(left_over_num)
 ```
 
 ## power operator
 
-```
+``` python
 power_sum = 2 \*\* 3
 print(power_sum)
 ```
 
 ## Float
 
-```
+``` python
 float_sum = 2 + 3.0
 print(float_sum)
 ```
@@ -76,7 +79,7 @@ In a fictional country named Lowtaxland, the income tax is 5%. In another fictio
 
 # Reassigning Values
 
-```
+``` python
 age = 22
 print(age)
 age = age + 5
@@ -85,7 +88,7 @@ print(age)
 
     ### shortcut ^
 
-```
+``` python
 age = 22
 age += 5 ## also works with "-, \*, /, +"
 print(age)
@@ -93,7 +96,7 @@ print(age)
 
 ## string things
 
-```
+``` python 
 string = "hokus" + "pokus"
 print(string)
 
@@ -103,13 +106,13 @@ print(string \* 5)
 
 ## string concatenation
 
-```
+``` python
 print('23' + '3')
 ```
 
 ## input function
 
-```
+``` python
 print("What is your name?")
 user_name = input() #input function always returns str
 print('Hello there ' + user_name)
@@ -151,3 +154,32 @@ Watch out for typos: you must show the output in this particular format!
 - lexis - pre-defined keywords that cannot be used as variables
 - syntax - the arrangement of keywords and phrases that make up python lanugage
 - semantics - reference of what is True, if a function takes 1 arg, you can only give 1 arg
+
+
+# Module 2: Data Types, Evaluation, Basic I/O
+
+## **Type Casting**
+
+Type Casting is the method to convert the variable data type into a certain data type in order to the operation required to be performed by users.
+
+``` python
+    height_cm = float(input("Height converter: enter your height in cm: "))
+    print("Your height in feet is: ", height_cm / 30.48)
+```
+
+## Exercise 1: Section 3 Type Casting 
+Salary calculator
+Ask the user for the number of hours they worked last month and their hourly rate (both numbers should be floats). Use the following prompts:
+
+How many hours did you work last month? << add a space at the end of this prompt
+What is your hourly rate? << add a space at the end of this prompt
+
+Then, show the following message with the calculated salary:
+
+Last month, you earned {hours * hourly_rate} dollars
+
+The salary should be shown as a float number. For example, for input 30 hours and hourly rate 10.5, show:
+
+Last month, you earned 315.0 dollars
+
+Watch out for typos: you must show the output in this particular format!
