@@ -166,20 +166,177 @@ Type Casting is the method to convert the variable data type into a certain data
     print("Your height in feet is: ", height_cm / 30.48)
 ```
 
-## Exercise 1: Section 3 Type Casting
+## Exercise 4
 
 Salary calculator
 Ask the user for the number of hours they worked last month and their hourly rate (both numbers should be floats). Use the following prompts:
-
 How many hours did you work last month? << add a space at the end of this prompt
 What is your hourly rate? << add a space at the end of this prompt
-
 Then, show the following message with the calculated salary:
-
 Last month, you earned {hours \* hourly_rate} dollars
-
 The salary should be shown as a float number. For example, for input 30 hours and hourly rate 10.5, show:
-
 Last month, you earned 315.0 dollars
-
 Watch out for typos: you must show the output in this particular format!
+
+## **print() and strings. Keyword Arguments and Named Arguments**
+``` python
+    print('Hello, World', end='.')
+    print('Python speaking')
+```
+
+**keyword arguments** - optional arguments which you can use at the end of the function after all the other arguments. 
+
+
+```python
+    first_name = 'John'
+    print("Your name is", first_name, "Welcome!", sep='-', end='=')
+```
+
+This will print
+
+```
+    Your first name is-John-Welcome!=
+```
+
+## Bit operators
+
+```python
+& - logical AND
+| - logical OR
+~ - logical NOT
+^ - logical XOR
+<< - original value multiplied 
+>> - original value divided
+
+
+Example:
+    12 << 1 = 24
+    12 << 2 = 48
+    12 << 3 = 96
+
+    12 >> 1 = 6
+    12 >> 2 = 3
+```
+
+# Module 3: Control Flow - Conditional Blocks and Loops
+
+```python
+    if condition_a_met:
+        do_scenario_a()
+    elif condition_b_met():
+        do_scenario_b()
+    elif condition_c_met():
+        do_scenario_c()
+    else:
+        do_scenario_d()
+```
+
+## **Available logical operators**
+
+```python
+    <  less than
+    >  greater than
+    <= less than or equal
+    >= greater than or equal
+    == equals
+    != not equals
+```
+
+## **Joining multiple conditions**
+
+```python
+    1. not
+    2. and
+    3. or
+
+
+user_age = int(input('What is your age? '))
+user_country = input('What is your country? ')
+
+if ((user_age < 25 and not user_country == 'Germany') or (user_age < 25 and user_country == 'Germany')):
+    print('You qualify')
+else:
+    print('You don\'t qualify!')
+```
+
+## Exercise 5
+
+Refund Policy Helper
+Let's help an online store with their new refund policy. In this store, you can return an item and get a refund in 2 cases:
+
+1. Within 10 days from the day of purchase, given that you have not used the item, or
+2. No matter when you bought it, when the item broke down through no fault of your own.
+
+Write a program that first asks the user three questions and then informs them whether they can get a refund. Ask the following questions:
+
+How many days ago have you purchased the item? << add a space at the end of this prompt
+
+Have you used the item at all [y/n]?  << add a space at the end of this prompt
+
+Has the item broken down on its own [y/n]?  << add a space at the end of this prompt
+
+Based on the answers and the refund policy explained above, print either:
+You can get a refund.
+or:
+You cannot get a refund.
+
+### Here's a sample solution to Coding Exercise 5:
+``` python
+purchase_days_ago = int(input('How many days ago have you purchased the item? '))
+is_used = input('Have you used the item at all [y/n]? ')
+is_broken = input('Has the item broken down on its own [y/n]? ')
+ 
+if(is_broken == 'y' or (purchase_days_ago <= 10 and is_used == 'n')):
+  print('You can get a refund.')
+else:
+  print('You cannot get a refund.')
+```
+
+
+## for loop and while loop
+
+ - A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
+
+ - With the while loop we can execute a set of statements as long as a condition is true.
+
+```python 
+for letter in 'hello!':
+    print("Current letter: ", letter)
+
+counter = 1
+while counter < 11:
+    print(counter)
+    counter += 1
+print('Finished')
+
+
+for counter in range(1, 11, 2):
+    print(counter)
+print('Finished')
+
+```
+
+
+## break and continue
+
+**Break statement** - The break statement is used to terminate the loop or statement in which it is present. After that, the control will pass to the statements that are present after the break statement, if available. If the break statement is present in the nested loop, then it terminates only those loops which contains break statement
+
+
+**Continue statement** Continue is also a loop control statement just like the break statement. continue statement is opposite to that of break statement, instead of terminating the loop, it forces to execute the next iteration of the loop. As the name suggests the continue statement forces the loop to continue or execute the next iteration. When the continue statement is executed in the loop, the code inside the loop following the continue statement will be skipped and the next iteration of the loop will begin.
+
+**break**
+```python
+while True:
+    name = input('Enter your name or EXIT to close the program: ')
+    if (name == 'EXIT'):
+        break
+    print('Hello', name)
+```
+
+**continue**
+```python
+for i in range(1,21):
+    if i % 5 == 0:
+        continue
+    print(i)
+```
