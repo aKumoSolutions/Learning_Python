@@ -340,3 +340,72 @@ for i in range(1,21):
         continue
     print(i)
 ```
+
+
+# Module 4: Data Collections, Tuples, Lists, Dictionaries
+
+### **Collection Data Types** - are the data types that can store more than 1 value in a single variable
+
+
+## **Lists**
+
+```python
+top_cities = ['New York', 'Los Angeles', 'Chicago', 'Huston', 'Phoenix']
+
+print(top_cities)
+
+print(top_cities[0])
+print(top_cities[1])
+print(top_cities[-1])
+
+print(top_cities[0:3])
+
+```
+
+### **Deleting element in the list**
+
+```python
+top_cities = ['New York', 'Los Angeles',
+              'Singapore', 'Chicago', 'Huston', 'Phoenix']
+del top_cities[2]
+print(top_cities)
+
+```
+
+### **Adding new elements to lists**
+
+```python
+book_ratings = [7, 9, 5, 6, 8]
+book_ratings.append(4)
+print(book_ratings)
+
+book_ratings.insert(1, 10)
+print(book_ratings)
+
+```
+
+### **Iterating lists**
+
+**Example 1**
+```python
+top_cities = ['New York', 'Los Angeles', 'Chicago', 'Huston', 'Phoenix']
+for city in top_cities:
+    print("Current city: ", city)
+```
+
+**Example 2**
+```python
+top_cities = ['New York', 'Los Angeles', 'Chicago', 'Huston', 'Phoenix']
+for index in range(len(top_cities)):
+    print("Current index: ", index, '| Current city: ', top_cities[index])
+```
+
+**Example 3**
+```python
+spendigs = [32.45, 18.65, 23.45, 78.32, 5.23]
+
+sum = 0.0
+for spending in spendigs:
+    sum += spending
+print('Money spent:', sum)
+```
