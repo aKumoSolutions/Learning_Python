@@ -23,12 +23,16 @@ subtraction = 5 - 2
 multiplication = 5 \* 5
 ```
 
+<br>
+
 ## integer division
 
 ```python
 int_num = 7 // 2
 print(int_num)
 ```
+
+<br>
 
 ## modulus division
 
@@ -37,6 +41,8 @@ left_over_num = 7 % 4
 print(left_over_num)
 ```
 
+<br>
+
 ## power operator
 
 ```python
@@ -44,12 +50,16 @@ power_sum = 2 \*\* 3
 print(power_sum)
 ```
 
+<br>
+
 ## Float
 
 ```python
 float_sum = 2 + 3.0
 print(float_sum)
 ```
+
+<br>
 
 Extra: How does modulo division % work?
 I’ve noticed that some students have problems understanding how modulo division works. Here is an easy-to-follow example that I once provided to a student in a private message. If you have a problem with modulo, have a look at it.
