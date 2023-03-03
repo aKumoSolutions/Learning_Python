@@ -633,3 +633,184 @@ print(user_data)
 
 Answer: ('John', 'American', 1964, [77.0, 78.2, 77.5, 79.3])
 ```
+
+
+## Exercise 8
+
+All Roads Lead to Rome
+You are given a list with various flight connections in Europe. Each connection is represented as a tuple with the following elements:
+
+(city_from, city_to, time)
+
+For example, the following tuple represents a flight from Amsterdam to Dublin which takes 100 minutes:
+
+('Amsterdam', 'Dublin', 100)
+
+Your task is to go through all the routes in a loop and check how many of them lead to Rome (i.e. how many of them have city_to equal to 'Rome'). Among the routes to Rome, you should also calculate the average flight time. Print the following the output:
+
+{} connections lead to Rome with an average flight time of {} minutes
+
+Replace {} with the number of connections and the average flight time.
+
+
+### Here's a sample solution to Coding Exercise 8:
+``` python
+connections = [
+    ('Amsterdam', 'Dublin', 100),
+    ('Amsterdam', 'Rome', 140),
+    ('Rome', 'Warsaw', 130),
+    ('Minsk', 'Prague', 95),
+    ('Stockholm', 'Rome', 190),
+    ('Copenhagen', 'Paris', 120),
+    ('Madrid', 'Rome', 135),
+    ('Lisbon', 'Rome', 170),
+    ('Dublin', 'Rome', 170),
+    ]
+    
+num_con = 0
+num_minutes = 0
+for i in connections:
+    if i[1] == 'Rome':
+        num_con += 1
+        num_minutes += i[2]
+            
+print(f"{num_con} connections lead to Rome with an average flight time of {num_minutes / num_con} minutes")
+```
+
+## **Dictinaries**
+
+
+```python
+emails = {
+    'Anne Stahl': 'astahl@gmail.com',
+    'Peter Small': 'peters@yandex.com',
+    'Mark Steel': 'mark@steel@com'
+}
+
+print(emails['Mark Steel'])
+
+Answer = mark@steel@com
+```
+
+
+# Dictionary operations
+
+```python 
+grades = {}
+grades['John'] = 'A-'
+grades['Anne'] = 'B'
+
+print(grades)
+
+Answer: {'John': 'A-', 'Anne': 'B'}
+
+```
+
+```python
+grades['John'] = 'A-'
+grades['Anne'] = 'A'
+
+print(grades)
+
+Answer: {'John': 'A-', 'Anne': 'A'}
+```
+
+```python
+
+grades.update({'John': 'A'})
+
+print(grades)
+
+Answer: {'John': 'A', 'Anne': 'A'}
+
+```
+
+```python
+del grades['John']
+print(grades)
+
+Answer: {'Anne': 'A'}
+```
+
+```python
+grades['Anne'] = 'A'
+grades['John'] = 'A'
+
+for el in grades:
+    print(el)
+
+Answer:
+Anne
+John
+
+
+for el in grades.keys():
+    print(el)
+
+Answer:
+Anne
+John
+
+
+for el in grades.values():
+    print(el)
+
+Answer:
+A
+A
+
+
+for person, grade in grades.items():
+    print(person, 'got', grade)
+
+Answer:
+Anne got A
+John got A
+```
+
+## Exercise 9
+
+Write a program that implements a simple interactive dictionary. Start by prompting the user with the following:
+
+Enter a word in English or EXIT: << put a space at the end of this message
+
+When the user enters EXIT in capital letters, terminate the program with the following:
+
+Bye!
+
+Otherwise, try to find the German equivalent in the dictionary provided in the exercise.
+
+a. if the word is in the dictionary, print: Translation: {} << replace {} with the word from the dictionary
+b. if the word is not in the dictionary, print: No match!
+
+You should keep asking the user for new words with the same prompt ('Enter a word in English or EXIT: ') until the user provides EXIT.
+
+
+### Here's a sample solution to Coding Exercise 9:
+``` python
+sample_dict = {
+    "mouth": "Mund",
+    "finger": "Finger",
+    "leg": "Bein",
+    "hand": "Hand",
+    "face": "Gesicht",
+    "nose": "Nase"
+}
+
+while True:
+    word = input('Enter a word in English or EXIT: ')
+
+    if word == 'EXIT':
+        break
+
+    if word in sample_dict:
+        print(f'Translation: {sample_dict[word]}')
+
+    else:
+        print('No match!')
+
+
+print('Bye!')
+```
+
+

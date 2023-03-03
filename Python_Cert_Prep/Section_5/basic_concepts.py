@@ -182,3 +182,72 @@ user_data = ('John', 'American', 1964, [77.0, 78.2, 77.5])
 user_data[3].append(79.3)
 
 print(user_data)
+
+
+# Dictionary
+
+emails = {
+    'Anne Stahl': 'astahl@gmail.com',
+    'Peter Small': 'peters@yandex.com',
+    'Mark Steel': 'mark@steel@com'
+}
+
+print(emails['Mark Steel'])
+
+
+spanish_animals = {
+    'dog': 'el perro',
+    'cat': 'el gato',
+    'horse': 'el caballo',
+    'bird': 'el pajaro'
+}
+
+print(spanish_animals['bird'])
+
+print(spanish_animals)
+
+# Using list inside of the dictionary
+
+city_ratings = {
+    'Bangkok': [7, 4, 7, 5],
+    'Hanoi': [7, 6, 4, 5],
+    'Mania': [6, 6, 4, 4, 5]
+}
+
+
+# Dictionary operations
+
+grades = {}
+grades['John'] = 'A-'
+grades['Anne'] = 'B'
+
+print(grades)
+
+grades['Anne'] = 'A'
+
+print(grades)
+
+grades.update({'John': 'A'})
+
+print(grades)
+
+print(len(grades))
+
+del grades['John']
+print(grades)
+
+grades['John'] = 'A'
+
+for el in grades:
+    print(el)
+
+
+for el in grades.keys():
+    print(el)
+
+for el in grades.values():
+    print(el)
+
+
+for person, grade in grades.items():
+    print(person, 'got', grade)
