@@ -419,3 +419,217 @@ for spending in spendigs:
     sum += spending
 print('Money spent:', sum)
 ```
+
+
+## **Changing the element position in list**
+
+**Swapping elements in list**
+```python
+top_cities = ['New York', 'Los Angeles', 'Chicago', 'Huston', 'Phoenix']
+top_cities[0], top_cities[4] = top_cities[4], top_cities[0]
+print(top_cities)
+
+Answer: ['Phoenix', 'Los Angeles', 'Chicago', 'Huston', 'New York']
+```
+
+<br>
+
+**Sorting the list**
+
+```python
+top_cities = ['New York', 'Los Angeles', 'Chicago', 'Huston', 'Phoenix']
+top_cities.sort()
+print(top_cities)
+
+Answer: ['Chicago', 'Huston', 'Los Angeles', 'New York', 'Phoenix']
+```
+
+<br>
+
+**Sorting using reverse**
+
+```python
+random_numbers = [2, 5, 0, -3, 4]
+random_numbers.sort(reverse=True)
+print(random_numbers)
+
+Answer: [5, 4, 2, 0, -3]
+```
+
+<br>
+
+
+**Element check inside of the list**
+
+```python
+invited_guest = ['Kate', 'Adam', 'Kerry', 'Joe', 'Anne', 'Marie']
+name = input('What is your name? ')
+if name in invited_guest:
+    print('Welcome!')
+else:
+    print('You are not invited!')
+```
+
+<br>
+
+**Copying list**
+
+```python
+list_original = [1, 2, 3]
+list_new = list_original[:2]
+list_original[0] = -5
+print('Original:', list_original, '\nNew', list_new)
+
+Answer: Original: [-5, 2, 3] 
+        New [1, 2]
+```
+
+<br>
+
+
+**List Comprehension**
+
+```python
+numbers = [i for i in range(1, 101)]
+print(numbers)
+
+Answer: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+
+numbers = [i for i in range(1, 101) if i % 3 != 0]
+print(numbers)
+
+Answer: [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20, 22, 23, 25, 26, 28, 29, 31, 32, 34, 35, 37, 38, 40, 41, 43, 44, 46, 47, 49, 50, 52, 53, 55, 56, 58, 59, 61, 62, 64, 65, 67, 68, 70, 71, 73, 74, 76, 77, 79, 80, 82, 83, 85, 86, 88, 89, 91, 92, 94, 95, 97, 98, 100]
+```
+
+
+**Nested List**
+
+```python
+cells = [['A1', 'A2', 'A3'], ['B1', 'B2', 'B3']]
+
+print(cells[0]) = ['A1', 'A2', 'A3']
+print(cells[0][0]) = A1
+print(cells[0][1]) = A2
+print(cells[1][2]) = B3
+
+
+for row in cells:
+    for cell in row:
+        print(cell, '', end=' ')
+    print()
+
+Answer: A1  A2  A3  
+        B1  B2  B3 
+
+
+table = [[i for i in range(1, 6)] for j in range(4)]
+print(table)
+
+Answer: [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
+```
+
+
+**Add / Multiply List**
+
+```python
+list_us = ['New York', 'Chicago']
+list_uk = ['London', 'Bristol']
+
+list_all = list_us + list_uk
+print(list_all)
+
+Answer = ['New York', 'Chicago', 'London', 'Bristol']
+
+
+list_numbers = [0, 1] * 10
+print(list_numbers)
+
+Answer: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+
+```
+
+### **String Features**
+
+```python
+fav_band = 'Green Day'
+print(fav_band[6])
+
+Answer: D
+
+print(fav_band[:6])
+
+Answer: Green
+
+fav_band[6] = 'M'
+
+Answer: 
+
+fav_band[6] = 'M'
+TypeError: 'str' object does not support item assignment
+
+```
+
+**Text Capitalization**
+
+```python
+
+text = 'please capitalize me'
+text_cap = text.upper()
+print(text_cap)
+
+Answer: PLEASE CAPITALIZE ME 
+```
+
+
+## **Tuples**
+
+**Tuples are immutable**
+
+```python
+three_el_tuple = 1, 2, 3
+print(three_el_tuple)
+
+Answer = (1, 2, 3)
+
+user_data = ('John', 'American', 1964)
+
+
+user_data.append('teacher')
+This will throw an error:
+AttributeError: 'tuple' object has no attribute 'append'
+
+
+del user_data[0]
+This will throw an error:
+TypeError: 'tuple' object doesn't support item deletion
+```
+
+## Tuples in list
+
+```python
+city_1 = ('London', 'UK', 8.98)
+city_2 = ('Canberra', 'Australia', 0, 4)
+city_3 = ('Algiers', 'Algeria', 3.9)
+
+capitals = [('London', 'UK', 8.98), ('Canberra',
+                                     'Australia', 0, 4), ('Algiers', 'Algeria', 3.9)]
+for capital in capitals:
+    print('Name:', capital[0], ', Country:',
+          capital[1], ', Population:', capital[2])
+
+
+Answer:
+Name: London , Country: UK , Population: 8.98
+Name: Canberra , Country: Australia , Population: 0
+Name: Algiers , Country: Algeria , Population: 3.9
+```
+
+## List in tuples
+```python
+user_data = ('John', 'American', 1964, [77.0, 78.2, 77.5])
+user_data[3].append(79.3)
+print(user_data)
+
+
+Answer: ('John', 'American', 1964, [77.0, 78.2, 77.5, 79.3])
+```
