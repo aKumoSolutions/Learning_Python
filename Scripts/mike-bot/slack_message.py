@@ -24,4 +24,3 @@ if "All Systems Operational" not in github_status():
 
 if "All Systems Operational" not in digitalocean_status():
     slack_message(data=digitalocean_status())
-
