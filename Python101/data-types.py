@@ -25,7 +25,6 @@ var3 = oct(123)
 var4 = hex(123)
 # print(var4)
 
-
 ## this is boolean
 var5 = True
 # print(var5)
