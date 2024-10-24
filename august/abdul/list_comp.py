@@ -6,7 +6,6 @@ for fruit in fruits:
     if count == 0:
         unique_fruits.append(fruit)
 
-
 # res = [fruits.index(fruit) for fruit in fruits]
 res = [ fruits[x] for x in range(len(fruits)) if x == fruits.index(fruits[x])]
 
