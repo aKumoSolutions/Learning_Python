@@ -4,8 +4,20 @@
 # remove students from the dictionary, and 
 # calculate the average grade.
 
+def verifyGrade(user_input):
+    try:
+        info = user_input.split(',')
+        if not info[1].isdigit():
+            print('score must be integer value')
+            exit(1)
+        return info[0], info[1]
+    except IndexError:
+        print("Please enter valid data: ex(abdul,55)")
+        exit(1)
+
+
 actions = ['add', 'mod', 'remove', 'cal']
-grades = {'tom': 87, 'bob': 56, 'lucy': 32, 'charlie': 78}
+grades = {}
 action = input("Please enter an action [add, mod, remove, cal]: ")
 
 if action not in actions:
@@ -18,25 +30,19 @@ print(grades)
 ## add
 if action == 'add':
     input = input('Please enter name and score seprated by ",": ')
-    info = input.split(',') #['abdul', ' 54']
-    if not info[1].isdigit():
-        print('score must be integer value')
-        exit
-    grades[info[0]] = int(info[1])
-    print('student', info[0], 'added successfully')
+    name, grade = verifyGrade(input)
+    grades[name] = int(grade)
+    print('student', name, 'added successfully')
 
 ## modify
 elif action == 'mod':
     student = input('Please enter name and score seprated by "," : ')
-    info = student.split(',')
-    if not info[1].isdigit():
-        print('score must be integer value')
-        exit
-    if info[0] in grades.keys():
-        grades[info[0]] = int(info[1])
-        print(info[0], 'modified successfully')
+    name, grade = verifyGrade(student)
+    if name in grades.keys():
+        grades[name] = int(grade)
+        print(name, 'modified successfully')
     else:
-        print(info[0], 'does not exist in grade system')
+        print(name, 'does not exist in grade system')
         exit
 
 ## remove
@@ -50,5 +56,8 @@ elif action == 'remove':
 
 ## calculate avr
 else:
-    average = sum(grades.values()) / len(grades.values())
-    print("average grade is", average)
+    try:
+        average = sum(grades.values()) / len(grades.values())
+        print("average grade is", average)
+    except ZeroDivisionError:
+        print("No students graded")

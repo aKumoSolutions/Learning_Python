@@ -15,3 +15,17 @@ for x in range(len(fruits)):
     print(x, fruits[x], fruits.index(fruits[x]))
     if x == fruits.index(fruits[x])
         res.append(fruits[x])
+
+
+## task 1 
+## 
+## 
+## 
+def test():
+
+
+## task 2
+## 
+## 
+## 
+def ss():
