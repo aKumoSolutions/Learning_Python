@@ -22,10 +22,11 @@ for x in range(len(fruits)):
 ## 
 ## 
 def test():
-
+    pass
 
 ## task 2
 ## 
 ## 
 ## 
 def ss():
+    pass
