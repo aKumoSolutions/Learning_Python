@@ -120,6 +120,7 @@ data = {
 
 }
 
+
 manage_students(students, action, student_name):
     """Adding or deleting students"""
     
@@ -136,4 +137,3 @@ manage_students(students, action, student_name):
         return f"{student_name} has been removed."
 
     return "Invalid action. Please use 'add' or 'delete'."
-
