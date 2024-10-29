@@ -167,3 +167,18 @@ def student_search():
     return {"Error: Student not found"}
 
 student_search()
+
+
+def update_student_attr():
+    for i in range(len(data['students'])):
+        print(i,  data['students'][i]['name'])
+
+    x = int(input("Please choose a student #: "))
+
+    for key in data['students'][x].keys():
+        print(key, "| ", end="")
+    print("")
+    attr, value = input("Enter what you want to change & new value: ").split()
+    data['students'][x][attr] = value
+    
+    return data['students'][x]
