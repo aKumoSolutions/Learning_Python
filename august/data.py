@@ -1,3 +1,6 @@
+from tokenize import group
+
+
 data = {
         "students": [
             {
@@ -119,3 +122,15 @@ data = {
         ]
 
 }
+
+def look_up_student_by_group():
+    for group in data['groups']:
+        print(group['group_name'])
+
+    students = []
+    group = input("Please enter a group: ")
+    for st in data['students']:
+        if st['group'] == group:
+            students.append(st['name'])
+    return students
+
