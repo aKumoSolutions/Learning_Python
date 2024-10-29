@@ -148,9 +148,10 @@ def students_with_specific_certificate():
     
     #============== Second Method Using list Comprehension ==============#
     student_list = [student["name"] for student in data["students"] if certificate in student["certificates"]]
-    print(student_list)
-    if not student_list:
-        print("No student have this certificate")
-   
+
+    if len(student_list) == 0:
+        return "No student have this certificate"
+    
+    return student_list
            
-students_with_specific_certificate()    
+print(students_with_specific_certificate())    
