@@ -154,4 +154,16 @@ def students_with_specific_certificate():
     
     return student_list
            
-print(students_with_specific_certificate())    
+students_with_specific_certificate()
+
+
+# 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+def student_search():
+    uname = input("Please enter student name: ")
+    for x in data["students"]:
+        if x["name"] == uname:
+            print("Student in the group!")
+            return x
+    return {"Error: Student not found"}
+
+student_search()
