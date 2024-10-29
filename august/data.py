@@ -148,12 +148,15 @@ def students_with_specific_certificate():
     
     #============== Second Method Using list Comprehension ==============#
     student_list = [student["name"] for student in data["students"] if certificate in student["certificates"]]
-    print(student_list)
-    if not student_list:
-        print("No student have this certificate")
 
+    if len(student_list) == 0:
+        return "No student have this certificate"
+    
+    return student_list
            
-students_with_specific_certificate()    
+students_with_specific_certificate()
+
+
 # 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
 def student_search():
     uname = input("Please enter student name: ")
