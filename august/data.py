@@ -151,6 +151,16 @@ def students_with_specific_certificate():
     print(student_list)
     if not student_list:
         print("No student have this certificate")
-   
+
            
 students_with_specific_certificate()    
+# 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+def student_search():
+    uname = input("Please enter student name: ")
+    for x in data["students"]:
+        if x["name"] == uname:
+            print("Student in the group!")
+            exit(1)
+    print("Not found")
+
+student_search()
