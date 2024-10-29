@@ -119,3 +119,38 @@ data = {
         ]
 
 }
+
+## 3. Function to print list of students with specific certificates
+def students_with_specific_certificate():
+    print("""
+          Please choose one certificate from the list below:
+                Linux Certificate
+                Bash Certificate
+                Python Certificate
+                AWS Certificate
+                Terraform Certificate
+                Docker Certificate
+                Kubernetes Certificate
+                Jenkins Certificate
+          """)
+    
+    ## Get user input
+    certificate = input("Please enter certificate name: ")
+    ## Empty list to hold student names with specific cetificate
+    # student_list = []
+    
+    ## Loop through data and check which student has that specific certificate, 
+    ## and add the student name to the list
+    #============== First Method Using For Loop ==============#
+    # for student in data["students"]:
+    #     if certificate in student["certificates"]:
+    #         student_list.append(student["name"])
+    
+    #============== Second Method Using list Comprehension ==============#
+    student_list = [student["name"] for student in data["students"] if certificate in student["certificates"]]
+    print(student_list)
+    if not student_list:
+        print("No student have this certificate")
+   
+           
+students_with_specific_certificate()    
