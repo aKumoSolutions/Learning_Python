@@ -160,7 +160,7 @@ def student_search():
     for x in data["students"]:
         if x["name"] == uname:
             print("Student in the group!")
-            exit(1)
-    print("Not found")
+            return x
+    return {"Error: Student not found"}
 
 student_search()
