@@ -1,7 +1,7 @@
 data = {
         "students": [
             {
-                "name": "Abdul S",
+                "name": "Abdul Sharif",
                 "email": "john.smith@example.com",
                 "github": "johnsmith123",
                 "group": "Group A",
@@ -10,7 +10,7 @@ data = {
                 "demos": 3
             },
             {
-                "name": "Abdullah H",
+                "name": "Abdullah Hanifi",
                 "email": "john.smith@example.com",
                 "github": "johnsmith123",
                 "group": "Group A",
@@ -37,7 +37,7 @@ data = {
                 "demos": 4
             },
             {
-                "name": "Shirin Z",
+                "name": "Shirin Ziyovuddinova",
                 "email": "michael.brown@example.com",
                 "github": "michaelbrown",
                 "group": "Group C",
@@ -46,7 +46,7 @@ data = {
                 "demos": 5
             },
             {
-                "name": "Abdulhamid A",
+                "name": "Abdulhamid Abdullajonov",
                 "email": "michael.brown@example.com",
                 "github": "michaelbrown",
                 "group": "Group C",
@@ -56,55 +56,43 @@ data = {
             }
         ],
         "groups": [
-            {
-                "group_name": "January 2024",
-                "students": ["John Smith", "Emma Davis"]
-            },
-            {
-                "group_name": "May 2024",
-                "students": ["John Smith", "Emma Davis"]
-            },
-            {
-                "group_name": "August 2024",
-                "students": ["Alice Johnson"]
-            },
-            {
-                "group_name": "November 2024",
-                "students": ["Michael Brown"]
-            }
+            "January 2024",
+            "May 2024",
+            "August 2024",
+            "November 2024",
         ],
         "sessions": [
             {
                 "name": "Linux",
-                "prerequisite": None,
+                "prerequisite": []
             },
             {
                 "name": "Bash",
-                "prerequisite": "Linux",
+                "prerequisite": ["Linux"]
             },
             {
                 "name": "Python",
-                "prerequisite": "Bash",
+                "prerequisite": ["Linux", "Bash"]
             },
             {
                 "name": "AWS",
-                "prerequisite": "Python",
+                "prerequisite": ["Linux", "Bash", "Python", "GIT"]
             },
             {
                 "name": "Terraform",
-                "prerequisite": "AWS",
+                "prerequisite": ["Linux", "Bash", "Python", "GIT", "AWS"]
             },
             {
                 "name": "Docker",
-                "prerequisite": "Terraform",
+                "prerequisite": ["Linux", "Bash", "Python", "GIT", "AWS", "Terraform"]
             },
             {
                 "name": "Kubernetes",
-                "prerequisite": "Docker",
+                "prerequisite": ["Linux", "Bash", "Python", "GIT", "AWS", "Terraform", "Docker"]
             },
             {
                 "name": "Jenkins",
-                "prerequisite": "Kubernetes",
+                "prerequisite": ["Linux", "Bash", "Python", "GIT", "AWS", "Terraform", "Docker", "Kubernetes"]
             }
         ], 
         "certificates": [
@@ -119,51 +107,3 @@ data = {
         ]
 
 }
-
-## 3. Function to print list of students with specific certificates
-def students_with_specific_certificate():
-    print("""
-          Please choose one certificate from the list below:
-                Linux Certificate
-                Bash Certificate
-                Python Certificate
-                AWS Certificate
-                Terraform Certificate
-                Docker Certificate
-                Kubernetes Certificate
-                Jenkins Certificate
-          """)
-    
-    ## Get user input
-    certificate = input("Please enter certificate name: ")
-    ## Empty list to hold student names with specific cetificate
-    # student_list = []
-    
-    ## Loop through data and check which student has that specific certificate, 
-    ## and add the student name to the list
-    #============== First Method Using For Loop ==============#
-    # for student in data["students"]:
-    #     if certificate in student["certificates"]:
-    #         student_list.append(student["name"])
-    
-    #============== Second Method Using list Comprehension ==============#
-    student_list = [student["name"] for student in data["students"] if certificate in student["certificates"]]
-
-    if len(student_list) == 0:
-        return "No student have this certificate"
-    
-    return student_list
-           
-students_with_specific_certificate()
-
-
-# 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
-def student_search():
-    uname = input("Please enter student name: ")
-    for x in data["students"]:
-        if x["name"] == uname:
-            print("Student in the group!")
-            return x
-    return {"Error: Student not found"}
-
-student_search()
