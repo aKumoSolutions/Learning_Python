@@ -1,3 +1,5 @@
+import random
+
 exercises = [
     {
         "topic": "Functions",
@@ -146,3 +148,25 @@ exercises = [
         ]
     }
 ]
+
+with open("august/tasks.txt","r") as file:
+    content = file.read().split('\n')
+
+for task in content:
+    if task == '':
+        break
+    name, topic, task = task.split()
+    exercises[int(topic)]['tasks'].pop(int(task))
+
+task_seeker = input("Please enter your name: ")
+for index, topic in enumerate(exercises):
+    print(index, topic['topic'])
+
+topic_num = int(input("Choose a topic (#): "))
+task_num = random.randint(0, len(exercises[topic_num]['tasks']) -1)
+
+with open("august/tasks.txt","a") as file:
+   file.write(f"{task_seeker} {topic_num} {task_num}\n")
+
+print("Your random task under the topic:", exercises[topic_num]['topic'], "is:")
+print(exercises[topic_num]['tasks'][task_num]['description'])

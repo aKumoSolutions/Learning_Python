@@ -1,0 +1,4 @@
+Shirin 3 2
+Abdullah 5 2
+Muhammad 0 0
+MuhammadAmin 2 2
