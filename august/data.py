@@ -107,3 +107,16 @@ data = {
         ]
 
 }
+
+
+
+# "description": "Format each student’s details as a single string 
+# using f-strings and store in a new list.","method": "f_string_formatting"
+
+
+details_list = []
+
+for student in data['students']:
+    details = (f"{student['name']}, {student['email']}, {student['github']}, {student['group']}, {student['certificates']}, {student['completed_sessions']},{student['demos']}")
+    details_list.append(details)
+print(details_list)
